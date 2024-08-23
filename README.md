@@ -38,3 +38,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Database
 
 Here is the [PostgreSQL database quickstart](https://console.neon.tech/app/projects/blue-mode-99101789/quickstart ). Using Neon for hosting since that is what Vercel Postgre|SQL uses under the hood, yet I want to take advantage of the better pricing model Neon uses for hobby accounts (10 databases). Vercel currently limits you to one database on their hobby tier.
+
+## Neon nuances
+
+Neon seems to want all the permissions in your repo and your organization... proceed with caution?
