@@ -34,3 +34,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Database
+
+Here is the [PostgreSQL database quickstart](https://console.neon.tech/app/projects/blue-mode-99101789/quickstart ). Using Neon for hosting since that is what Vercel Postgre|SQL uses under the hood, yet I want to take advantage of the better pricing model Neon uses for hobby accounts (10 databases). Vercel currently limits you to one database on their hobby tier.
