@@ -149,12 +149,7 @@ export default function Home() {
     //     </a>
     //   </div>
     // </main>
-    <section>
-      <h1>All Quizzes</h1>
-      <Suspense fallback={<p>Loading...</p>}>
-        <Quizzes />
-      </Suspense>
-      {/* <ul>
+    /* <ul>
         <li>
           <Link href="/quiz/1">Quiz 1</Link>
         </li>
@@ -164,7 +159,12 @@ export default function Home() {
         <li>
           <Link href="/quiz/3">Quiz 3</Link>
         </li>
-      </ul> */}
+      </ul> */
+    <section>
+      <h1 className="text-2xl font-smibold">All Quizzes</h1>
+      <Suspense fallback={<p>Loading...</p>}>
+        <Quizzes />
+      </Suspense>
     </section>
   );
 }
