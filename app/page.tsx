@@ -2,9 +2,15 @@
 import Link from "next/link";
 import postgres from "postgres";
 import { Suspense } from "react";
+import QuizForm from "./quiz-form";
 
-const sql = postgres(process.env.DATABASE_URL!)
+// const sql = postgres(process.env.DATABASE_URL!)
 
+async function getData() {
+  const sql = postgres(process.env.DATABASE_URL!);
+  const quizzes: Quiz[] = await sql`SELECT * FROM quizzes`;
+  return quizzes;
+}
 type Quiz = {
   quiz_id: number;
   title: string;
@@ -26,7 +32,8 @@ type Quiz = {
 // }
 
 async function Quizzes() {
-  const quizzes: Quiz[] = await sql`SELECT * FROM quizzes`
+  const quizzes = await getData();
+  // const quizzes: Quiz[] = await sql`SELECT * FROM quizzes`
 
   return (
     <ul>
@@ -35,6 +42,7 @@ async function Quizzes() {
           <Link href={`/quiz/${quiz.quiz_id}`} className="underline">{quiz.title}</Link>
         </li>
       ))}
+      {/* {data} */}
     </ul>
   )
 }
@@ -164,6 +172,7 @@ export default function Home() {
       <h1 className="text-2xl font-smibold">All Quizzes</h1>
       <Suspense fallback={<p>Loading...</p>}>
         <Quizzes />
+        <QuizForm />
       </Suspense>
     </section>
   );

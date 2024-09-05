@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^0.9.5",
     "next": "14.2.5",
     "postgres": "^3.4.4",
     "react": "^18",
