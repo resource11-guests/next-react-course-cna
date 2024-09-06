@@ -1,20 +1,20 @@
 // import Image from "next/image";
-import Link from "next/link";
-import postgres from "postgres";
-import { Suspense } from "react";
-import QuizForm from "./quiz-form";
+import Link from 'next/link'
+import postgres from 'postgres'
+import { Suspense } from 'react'
+import QuizForm from './quiz-form'
 
 // const sql = postgres(process.env.DATABASE_URL!)
 
 async function getData() {
-  const sql = postgres(process.env.DATABASE_URL!);
-  const quizzes: Quiz[] = await sql`SELECT * FROM quizzes`;
-  return quizzes;
+  const sql = postgres(process.env.DATABASE_URL!)
+  const quizzes: Quiz[] = await sql`SELECT * FROM quizzes`
+  return quizzes
 }
 type Quiz = {
-  quiz_id: number;
-  title: string;
-};
+  quiz_id: number
+  title: string
+}
 
 // async function Quizzes() {
 //   const quizzes = await sql`
@@ -32,21 +32,22 @@ type Quiz = {
 // }
 
 async function Quizzes() {
-  const quizzes = await getData();
+  const quizzes = await getData()
   // const quizzes: Quiz[] = await sql`SELECT * FROM quizzes`
 
   return (
     <ul>
       {quizzes.map((quiz) => (
         <li key={quiz.quiz_id}>
-          <Link href={`/quiz/${quiz.quiz_id}`} className="underline">{quiz.title}</Link>
+          <Link href={`/quiz/${quiz.quiz_id}`} className="underline">
+            {quiz.title}
+          </Link>
         </li>
       ))}
       {/* {data} */}
     </ul>
   )
 }
-
 
 export default function Home() {
   return (
@@ -175,5 +176,5 @@ export default function Home() {
         <QuizForm />
       </Suspense>
     </section>
-  );
+  )
 }
