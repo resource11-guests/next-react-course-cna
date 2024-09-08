@@ -1,12 +1,11 @@
 import { redirect } from 'next/navigation'
 import postgres from 'postgres'
 
-const sql = postgres(process.env.DATABASE_URL!, { ssl: 'require' })
+const sql = postgres(process.env.DATABASE_URL!)
 
-// type Quiz = {
-//   quiz_id: number;
-//   title: string;
-// };
+/**
+ * This page.tsx file, located in the [id] folder, creates a dynamic route that will show a quiz based on the ID in the URL.The brackets around [id] in the file name tell Next.js that this is a dynamic route. The ID will be passed as a parameter to the QuizPage component.
+ */
 
 async function Quiz({
   id,

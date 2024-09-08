@@ -29,7 +29,6 @@ export default function QuizForm() {
       }
     })
 
-    // console.log(title, description, question, answers);
     await sql`
 			WITH new_quiz AS (
 				INSERT INTO quizzes (title, description, question_text, created_at)
@@ -70,14 +69,6 @@ export default function QuizForm() {
           className="bg-gray-50 borger-gray-200 rounded p-1"
           type="text"
           name="question"
-        />
-      </label>
-      <label>
-        Answer 1
-        <input
-          className="bg-gray-50 borger-gray-200 rounded p-1"
-          type="text"
-          name="answer"
         />
       </label>
       <div className="my-4" />

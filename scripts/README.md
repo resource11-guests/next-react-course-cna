@@ -1,4 +1,4 @@
-# Example SQL table creation script
+# Example SQL table creation and seed script
 
 ```sql
 CREATE TABLE IF NOT EXISTS quizzes (

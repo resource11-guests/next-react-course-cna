@@ -1,4 +1,4 @@
-// app/actions.ts
+// Example of a server action using neon serverless
 'use server'
 import { neon } from '@neondatabase/serverless'
 

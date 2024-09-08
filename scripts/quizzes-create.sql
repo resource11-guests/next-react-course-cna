@@ -1,3 +1,4 @@
+-- Create quizzes and answers tables
 CREATE TABLE
 	IF NOT EXISTS quizzes (
 		quiz_id SERIAL PRIMARY KEY,
